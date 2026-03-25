@@ -1,0 +1,238 @@
+/* --- Premium Navbar --- */
+.navbar {
+  height: 5.5rem;
+  padding: 0.5rem 3rem !important;
+  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.75) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+/* Shrink on scroll */
+.navbar.scrolled {
+  height: 4.5rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* --- Brand --- */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.brand-logo i {
+  color: #fe424d;
+  transform: rotate(-10deg);
+  transition: 0.3s;
+}
+
+.brand-logo:hover i {
+  transform: rotate(0deg) scale(1.15);
+}
+
+/* --- Nav Links --- */
+.nav-link {
+  font-weight: 600 !important;
+  color: #333 !important;
+  position: relative;
+  padding: 0.5rem 1rem !important;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #fe424d !important;
+  background: rgba(254, 66, 77, 0.08);
+  transform: translateY(-1px);
+}
+
+/* underline animation */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 5px;
+  width: 0;
+  height: 2px;
+  background: #fe424d;
+  transition: 0.3s;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 60%;
+}
+
+/* --- Search Bar --- */
+.search-container {
+  border-radius: 50px;
+  border: 1px solid #e5e5e5;
+  padding: 0.2rem 0.5rem 0.2rem 1.2rem;
+  background: white;
+  transition: 0.3s;
+  max-width: 420px;
+}
+
+.search-container:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  border-color: #fe424d50;
+}
+
+.search-inp {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  font-size: 0.9rem;
+}
+
+.search-btn {
+  background: linear-gradient(135deg, #fe424d, #ff7a7f) !important;
+  color: white !important;
+  border-radius: 50% !important;
+  width: 34px;
+  height: 34px;
+  transition: 0.3s;
+}
+
+.search-btn:hover {
+  transform: rotate(10deg) scale(1.1);
+}
+
+/* --- Login Button --- */
+.login-btn-custom {
+  border: 1.5px solid #fe424d !important;
+  color: #fe424d !important;
+  border-radius: 30px;
+  font-weight: 600 !important;
+  transition: 0.3s;
+}
+
+.login-btn-custom:hover {
+  background: #fe424d !important;
+  color: white !important;
+  box-shadow: 0 6px 16px rgba(254,66,77,0.35);
+}
+
+/* --- Avatar --- */
+.user-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fe424d, #ff7a7f);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.user-avatar:hover {
+  transform: scale(1.1);
+}
+
+/* --- Dropdown --- */
+.dropdown-menu {
+  border-radius: 15px;
+  padding: 0.5rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.dropdown-item {
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.dropdown-item:hover {
+  background: rgba(254,66,77,0.1);
+}
+
+/* --- Mobile --- */
+@media (max-width: 991px) {
+  .navbar {
+    padding: 0.5rem 1rem !important;
+    height: auto;
+  }
+
+  .navbar-collapse {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
+
+  .search-container {
+    margin: 1rem 0;
+    width: 100%;
+  }
+
+  .nav-link {
+    padding: 0.8rem 1rem !important;
+  }
+}
+
+/* animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
+/* Optional premium hover animation */
+.logo-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* Animate ONLY logo */
+.navbar-brand:hover .logo-img {
+  transform: rotate(20deg) scale(1.1);
+}
+
+
+.brand-lust {
+  background: linear-gradient(135deg, #fe424d, #ff7a7f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  transition: all 0.3s ease;
+}
+
+/* subtle effect ONLY on text */
+.navbar-brand:hover .brand-lust {
+  letter-spacing: 1px;
+}
+
+
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* prevent layout shift */
+.brand-logo {
+  will-change: transform;
+}
+
+.navbar-brand:hover .logo-img {
+  transform: rotate(20deg) scale(1.1);
+  filter: drop-shadow(0 4px 10px rgba(254,66,77,0.4));
+}

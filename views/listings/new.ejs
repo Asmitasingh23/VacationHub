@@ -1,0 +1,112 @@
+<% layout("layouts/boilerplate") %>
+
+<div class="host-container">
+  <div class="host-header">
+    <h1>Share your place with the world 🌍</h1>
+    <p>Turn your space into income — it's easy to get started</p>
+  </div>
+
+  <div class="host-card">
+    <form
+      method="post"
+      action="/listings"
+      novalidate
+      class="needs-validation"
+      enctype="multipart/form-data"
+    >
+      <!-- TITLE -->
+      <div class="form-section">
+        <h5>Give your place a title</h5>
+        <input
+          type="text"
+          name="listing[title]"
+          class="form-control"
+          placeholder="Cozy beach villa with sunset view"
+          required
+        />
+      </div>
+
+      <!-- DESCRIPTION -->
+      <div class="form-section">
+        <h5>Description</h5>
+        <textarea
+          name="listing[description]"
+          class="form-control"
+          rows="4"
+          placeholder="Describe your place..."
+          required
+        ></textarea>
+      </div>
+
+      <!-- IMAGE -->
+      <div class="form-section">
+        <h5>Add photos</h5>
+        <div class="upload-box">
+          <i class="fa-solid fa-cloud-arrow-up fa-2x mb-2"></i>
+          <p>Upload high-quality images</p>
+          <input type="file" name="image" required />
+        </div>
+      </div>
+
+      <!-- CATEGORY -->
+      <div class="form-section">
+        <h5>Category</h5>
+        <select name="listing[category]" class="form-select" required>
+          <option disabled selected>Select category</option>
+          <option>Trending</option>
+          <option>Rooms</option>
+          <option>IconicCities</option>
+          <option>Mountains</option>
+          <option>Castles</option>
+          <option>Camping</option>
+          <option>Farms</option>
+          <option>Arctic</option>
+        </select>
+      </div>
+
+      <!-- LOCATION -->
+      <div class="row form-section">
+        <div class="col-md-6">
+          <h5>Location</h5>
+          <input
+            type="text"
+            name="listing[location]"
+            class="form-control"
+            placeholder="Goa"
+            required
+          />
+        </div>
+
+        <div class="col-md-6">
+          <h5>Country</h5>
+          <input
+            type="text"
+            name="listing[country]"
+            class="form-control"
+            placeholder="India"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- PRICE -->
+      <div class="form-section">
+        <h5>Price per night</h5>
+        <div class="input-group">
+          <span class="input-group-text">₹</span>
+          <input
+            type="number"
+            name="listing[price]"
+            class="form-control"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- BUTTON -->
+      <button class="host-btn mt-3">
+        Publish your listing 🚀
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,137 @@
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- PREMIUM MOBILE-FIRST FILTER BAR --- */
+#filters {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 0;
+  position: sticky;
+  top: 5rem;
+  background: var(--bg-white);
+  z-index: 999;
+  border-bottom: 1px solid #e5e5e5;
+  scroll-snap-align: start;
+}
+
+/* Scroll container */
+.filters-center {
+  display: flex;
+  gap: 1.2rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding: 0.5rem 0.5rem;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+}
+
+/* Hide scrollbar */
+.filters-center::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual filter (CHIP STYLE) */
+.filter {
+  flex: 0 0 auto;
+  min-width: 70px;
+  text-align: center;
+  padding: 0.6rem 0.8rem;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid transparent;
+  opacity: 0.7;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+/* ICON */
+.filter i {
+  font-size: 1.2rem;
+  display: block;
+}
+
+/* TEXT */
+.filter p {
+  font-size: 0.7rem;
+  margin: 0.3rem 0 0;
+  font-weight: 600;
+}
+
+/* HOVER */
+.filter:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* ACTIVE STYLE */
+.filter:active {
+  transform: scale(0.95);
+}
+
+/* Desktop enhancement */
+@media (min-width: 768px) {
+  .filter {
+    padding: 0.8rem 1rem;
+  }
+
+  .filter p {
+    font-size: 0.75rem;
+  }
+}
+
+/* --- Tax Toggle Styling --- */
+.tax-toggle {
+  border: 1px solid var(--border-medium, #ccc);
+  border-radius: 2rem;
+  height: 3.25rem;
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-light, #f8f9fa);
+  white-space: nowrap;
+  flex-shrink: 0; /* Prevents squishing */
+}
+
+/* --- Card Improvements --- */
+.listing-card {
+  border: none !important;
+  margin-bottom: 2rem;
+  transition: transform 0.2s ease;
+}
+
+.listing-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  border-radius: 1rem !important;
+  object-fit: cover !important;
+}
+
+.listing-link {
+  text-decoration: none;
+  color: var(--text-main);
+}
+
+.tax-label {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.dropdown-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

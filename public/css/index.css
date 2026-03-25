@@ -1,0 +1,197 @@
+/* --- Global Styles --- */
+/* Define CSS variables for consistent theming across the application */
+
+/* Prevent horizontal scroll globally */
+html, body {
+  overflow-x: hidden;
+}
+:root {
+  --primary-color: #fe424d;
+  --primary-hover: #ff3340;
+  --text-main: #222222;
+  --text-secondary: #717171;
+  --bg-white: #ffffff;
+  --bg-light: #f7f7f7;
+  --border-light: #e0e0e0;
+  --border-medium: #dddddd;
+  --shadow-soft: 0 1px 12px rgba(0, 0, 0, 0.08);
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-white);
+  color: var(--text-main);
+}
+
+.container {
+  flex: 1;
+}
+
+/* --- Smooth Filter Bar --- */
+#filters {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  overflow-x: auto;
+  padding: 1.5rem 0 0.5rem 0; /* Top padding accounts for sticky nav */
+  background: var(--bg-white);
+  position: sticky;
+  top: 5rem;
+  z-index: 999;
+}
+
+#filters::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+.filter {
+  text-align: center;
+  margin-right: 2.5rem;
+  opacity: 0.65;
+  cursor: pointer;
+  transition: 0.2s all ease;
+  min-width: fit-content;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0.5rem;
+}
+
+.filter:hover {
+  opacity: 1;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--border-light);
+}
+
+.filter.active {
+  opacity: 1;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.filter i {
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.filter p {
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* --- Tax Toggle Mix --- */
+.tax-toggle {
+  border: 1px solid var(--border-medium);
+  border-radius: 12px;
+  height: 3.2rem;
+  padding: 0 1.2rem;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-white);
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Modern Listing Cards --- */
+.listing-card {
+  border: none !important;
+  margin-bottom: 2.5rem;
+  transition: transform 0.3s ease;
+  background: none !important;
+}
+
+.card-img-top {
+  border-radius: 1rem !important;
+  width: 100% !important;
+  height: 19rem !important;
+  object-fit: cover !important;
+  transition: filter 0.3s ease;
+}
+
+.listing-card:hover .card-img-top {
+  filter: brightness(92%);
+}
+
+.card-body {
+  padding: 0.8rem 0.2rem !important;
+}
+
+.card-text {
+  line-height: 1.4;
+}
+
+.card-text b {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.card-text .price {
+  font-weight: 600;
+  margin-top: 0.3rem;
+  color: var(--text-main);
+}
+
+.tax-info {
+  display: none;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+/* Card Hover Overlay (Airbnb style) */
+.card-img-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0) 30%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 1rem !important;
+}
+
+.listing-card:hover .card-img-overlay {
+  opacity: 1;
+}
+
+/* --- Buttons & Inputs --- */
+.btn-dark {
+  background-color: var(--primary-color) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 0.6rem 1.4rem !important;
+  font-weight: 600 !important;
+}
+
+.btn-dark:hover {
+  background-color: var(--primary-hover) !important;
+}
+
+.f-info-links a:hover {
+  text-decoration: underline;
+}
+
+/* --- Show Page Styles --- */
+.show-img {
+  height: 45vh !important;
+  border-radius: 1.5rem;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.show-card {
+  padding: 0 !important;
+  margin-top: 2rem;
+}
+
+/* Responsive Grid */
+@media (max-width: 992px) {
+  .tax-toggle {
+    display: none;
+  } /* Hide tax toggle on small tablets/mobile icons */
+}

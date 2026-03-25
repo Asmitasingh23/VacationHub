@@ -1,0 +1,89 @@
+<% layout("layouts/boilerplate") %>
+
+<div class="row mt-5">
+  <div class="col-md-6 offset-md-3 col-lg-5 offset-lg-3.5">
+    <div class="card shadow border-0 rounded-4 p-4 mb-5">
+      <div class="text-center mb-4">
+        <i class="fa-solid fa-earth-americas fa-3x text-success mb-2"></i>
+        <h2 class="fw-bold">Join stayFinder</h2>
+        <p class="text-muted small">Create an account to start your journey</p>
+      </div>
+
+      <form action="/signup" method="post" class="needs-validation" novalidate>
+        <div class="mb-3">
+          <label for="username" class="form-label fw-semibold">Username</label>
+          <div class="input-group">
+            <span class="input-group-text bg-light border-secondary-subtle">
+              <i class="fa-solid fa-at"></i>
+            </span>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="choose a unique username"
+              class="form-control border-secondary-subtle"
+              required
+            />
+          </div>
+          <div class="valid-feedback">Username looks good!</div>
+          <div class="invalid-feedback">Please choose a username.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label fw-semibold">Email</label>
+          <div class="input-group">
+            <span class="input-group-text bg-light border-secondary-subtle">
+              <i class="fa-solid fa-envelope"></i>
+            </span>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="e.g. travel@example.com"
+              class="form-control border-secondary-subtle"
+              required
+            />
+          </div>
+          <div class="invalid-feedback">
+            Please provide a valid email address.
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label for="password" class="form-label fw-semibold">Password</label>
+          <div class="input-group">
+            <span class="input-group-text bg-light border-secondary-subtle">
+              <i class="fa-solid fa-lock"></i>
+            </span>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="create a strong password"
+              class="form-control border-secondary-subtle"
+              required
+            />
+          </div>
+          <div class="invalid-feedback">
+            Password is required to secure your account.
+          </div>
+        </div>
+
+        <div class="d-grid">
+          <button class="btn btn-success btn-lg rounded-pill shadow-sm py-2">
+            Sign Up
+          </button>
+        </div>
+      </form>
+
+      <div class="text-center mt-4 border-top pt-3">
+        <p class="small text-muted mb-0">
+          Already a member?
+          <a href="/login" class="text-success text-decoration-none fw-bold"
+            >Login here</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

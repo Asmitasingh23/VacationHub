@@ -1,0 +1,66 @@
+/* --- Flash Message Styling --- */
+.custom-alert {
+  border: none;
+  border-left: 5px solid; /* Thick accent border */
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 1rem 1.5rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+/* Success Variant (Green accent) */
+.alert-success-custom {
+  border-left-color: #2ecc71;
+  color: #2c3e50;
+}
+
+/* Error Variant (Brand Red accent) */
+.alert-error-custom {
+  border-left-color: var(--primary-color, #fe424d);
+  color: #2c3e50;
+}
+
+.alert-icon {
+  margin-right: 12px;
+  font-size: 1.2rem;
+}
+
+/* Fixed Responsive Width */
+.flash-container {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.btn-close-custom {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #ccc;
+  cursor: pointer;
+  transition: 0.2s;
+  line-height: 1;
+}
+
+.btn-close-custom:hover {
+  color: var(--primary-color, #fe424d);
+}
+
+/* Mobile Fix: Full width on small screens, 50% on large */
+@media (max-width: 768px) {
+  .col-custom {
+    width: 90% !important;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 769px) {
+  .col-custom {
+    width: 50%;
+    margin: 0 auto;
+  }
+}

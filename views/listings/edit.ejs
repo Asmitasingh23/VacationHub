@@ -1,0 +1,104 @@
+<% layout("layouts/boilerplate") %>
+
+<div class="host-container">
+  <div class="host-header">
+    <h1>Edit your listing ✏️</h1>
+    <p>Update your place details anytime</p>
+  </div>
+
+  <div class="host-card">
+    <form
+      method="post"
+      action="/listings/<%= listing._id %>?_method=PUT"
+      novalidate
+      class="needs-validation"
+      enctype="multipart/form-data"
+    >
+      <!-- TITLE -->
+      <div class="form-section">
+        <h5>Title</h5>
+        <input
+          type="text"
+          name="listing[title]"
+          value="<%= listing.title %>"
+          class="form-control"
+          required
+        />
+      </div>
+
+      <!-- DESCRIPTION -->
+      <div class="form-section">
+        <h5>Description</h5>
+        <textarea
+          name="listing[description]"
+          class="form-control"
+          rows="4"
+          required
+        ><%= listing.description %></textarea>
+      </div>
+
+      <!-- CURRENT IMAGE -->
+      <div class="form-section">
+        <h5>Current Image</h5>
+        <img
+          src="<%= listing.image.url %>"
+          class="img-fluid rounded-3 mb-3"
+          style="max-height: 220px;"
+          alt="listing image"
+        />
+
+        <h6 class="mt-2">Upload New Image</h6>
+        <div class="upload-box">
+          <i class="fa-solid fa-cloud-arrow-up fa-2x mb-2"></i>
+          <p>Choose a new image (optional)</p>
+          <input type="file" name="listing[image]" />
+        </div>
+      </div>
+
+      <!-- LOCATION -->
+      <div class="row form-section">
+        <div class="col-md-6">
+          <h5>Location</h5>
+          <input
+            type="text"
+            name="listing[location]"
+            value="<%= listing.location %>"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <div class="col-md-6">
+          <h5>Country</h5>
+          <input
+            type="text"
+            name="listing[country]"
+            value="<%= listing.country %>"
+            class="form-control"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- PRICE -->
+      <div class="form-section">
+        <h5>Price per night</h5>
+        <div class="input-group">
+          <span class="input-group-text">₹</span>
+          <input
+            type="number"
+            name="listing[price]"
+            value="<%= listing.price %>"
+            class="form-control"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- BUTTON -->
+      <button class="host-btn mt-3">
+        Save Changes ✅
+      </button>
+    </form>
+  </div>
+</div>
