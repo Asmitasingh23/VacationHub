@@ -15,7 +15,7 @@ module.exports.signup = async (req, res, next) => {
     req.login(registeredUser, (err) => {
       if (err) return next(err);
 
-      req.flash("success", "Welcome to stayFinder!");
+      req.flash("success", "Welcome to VacationHub!");
 
       const redirectUrl = res.locals.redirectUrl || "/";
       res.redirect(redirectUrl);
@@ -33,7 +33,7 @@ module.exports.renderLoginFrom = (req, res) => {
 };
 
 module.exports.login = (req, res) => {
-  req.flash("success", "Welcome back to stayFinder!");
+  req.flash("success", "Welcome back to vacationHub!");
   const redirectUrl = res.locals.redirectUrl || "/";
   res.redirect(redirectUrl);
 };
